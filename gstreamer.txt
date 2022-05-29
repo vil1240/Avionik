@@ -1,5 +1,5 @@
 Sender
-gst-launch-1.0 videotestsrc ! video/x-raw,width=1920,height=1080,framerate=60/1 ! x264enc ! h264parse ! rtph264pay s ! udpsink host=localhost port=5000 -v
+gst-launch-1.0 videotestsrc ! video/x-raw,width=1920,height=1080,framerate=60/1 ! x264enc ! h264parse ! rtph264pay ! udpsink host=localhost port=5000 -v
 
 
 omx für encoding
