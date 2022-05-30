@@ -14,10 +14,14 @@ gst-launch-1.0 ximagesrc use-damage=0 ! video/x-raw,framerate=60/1 ! queue ! vid
 
 
 
-#Empfänger:
+##Empfänger:
 
 #Nur anzeigen (funktioniert):
 gst-launch-1.0 udpsrc port=5000 ! application/x-rtp, media=video, clock-rate=90000, encoding-name=H264, payload=96 ! rtph264depay ! decodebin ! videoconvert ! autovideosink sync=false
+
+#Anzeigen und als MP4
+gst-launch-1.0 udpsrc port=5000 ! application/x-rtp, media=video, clock-rate=90000, encoding-name=H264, payload=96 ! rtph264depay ! decodebin ! tee name=t t. ! queue leaky=1 ! videoconvert ! autovideosink sync=false -v t. ! queue ! x264enc ! mp4mux ! filesink location=/home/long/Schreibtisch/record.mp4 -e
+
 
 Anzeigen und als mp4 speichern
 gst-launch-1.0 udpsrc port=5000 ! application/x-rtp, media=video, clock-rate=90000, encoding-name=H264, payload=96 ! rtph264depay ! h264parse ! tee name=t ! queue ! decodebin ! videoconvert ! autovideosink sync=false t. ! queue ! mp4mux ! filesink  location=/home/long/Schreibtisch/filestream.mp4 -e
