@@ -1,2 +1,8 @@
 # ignore MAC Files
 **/.DS_Store
+
+# logs
+**/log
+
+# cmake-build-debug
+**/Code/Stream_Receiver/cmake-build-debug
