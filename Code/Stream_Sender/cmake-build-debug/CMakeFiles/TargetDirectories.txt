@@ -1,0 +1,3 @@
+/home/long/Github/Avionik/Code/Stream_Sender/cmake-build-debug/CMakeFiles/Stream_Sender.dir
+/home/long/Github/Avionik/Code/Stream_Sender/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/long/Github/Avionik/Code/Stream_Sender/cmake-build-debug/CMakeFiles/rebuild_cache.dir
