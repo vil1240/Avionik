@@ -27,6 +27,10 @@ Anzeigen und als mp4 speichern
 gst-launch-1.0 udpsrc port=5000 ! application/x-rtp, media=video, clock-rate=90000, encoding-name=H264, payload=96 ! rtph264depay ! h264parse ! tee name=t ! queue ! decodebin ! videoconvert ! autovideosink sync=false t. ! queue ! mp4mux ! filesink  location=/home/long/Schreibtisch/filestream.mp4 -e
 
 
+
+
+
+
 ## Desktop Stream
 # lokal, schwarzer screen
 gst-launch-1.0 -v ximagesrc startx=0 endx=1920 starty=0 endy=1080 use-damage=0 ! video/x-raw,framerate=60/1 ! videoscale ! video/x-raw,width=1920,height=1080 ! queue ! ximagesink 
